@@ -1,9 +1,5 @@
 <h1 align="center">🦙 Personal nvim setup</h1>
 
-<a href="https://dotfyle.com/marco-souza/nvim"><img src="https://dotfyle.com/marco-souza/nvim/badges/plugins?style=flat" /></a>
-<a href="https://dotfyle.com/marco-souza/nvim"><img src="https://dotfyle.com/marco-souza/nvim/badges/leaderkey?style=flat" /></a>
-<a href="https://dotfyle.com/marco-souza/nvim"><img src="https://dotfyle.com/marco-souza/nvim/badges/plugin-manager?style=flat" /></a>
-
 <div>
   <h4 align="center">
     <a href="#install">Install</a> ·
