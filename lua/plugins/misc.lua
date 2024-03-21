@@ -1,5 +1,9 @@
 return {
-  { "wakatime/vim-wakatime", event = "VeryLazy" },
+  {
+    "wakatime/vim-wakatime",
+    lazy = false,
+    build = ":WakaTimeDebugDisable", -- ensure logs are off
+  },
   { "nvim-ts-autotag", opts = {} },
   {
     "max397574/better-escape.nvim",
@@ -45,11 +49,11 @@ return {
     "aca/emmet-ls",
     event = "InsertEnter",
     config = function()
-      local lspconfig = require "lspconfig"
+      local lspconfig = require("lspconfig")
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      lspconfig.emmet_ls.setup {
+      lspconfig.emmet_ls.setup({
         capabilities = capabilities,
         init_options = {
           html = {
@@ -59,8 +63,7 @@ return {
             },
           },
         },
-      }
+      })
     end,
- },
+  },
 }
-
