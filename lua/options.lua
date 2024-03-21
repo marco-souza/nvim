@@ -1,7 +1,5 @@
 require "nvchad.options"
 
---- Editor settings module
-
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
