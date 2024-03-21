@@ -49,7 +49,7 @@ It setups up a few basic thigs like:
 Clone the repository and install the plugins:
 
 ```sh
-git clone git@github.com:marco-souza/nvim.nvim ~/.config/marco-souza/nvim
+git clone git@github.com:marco-souza/nvim ~/.config/marco-souza/nvim
 nvim --headless +"Lazy! sync" +qa
 ```
 
