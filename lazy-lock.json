@@ -14,6 +14,7 @@
   "friendly-snippets": { "branch": "main", "commit": "dcd4a586439a1c81357d5b9d26319ae218cc9479" },
   "fzf-lua": { "branch": "main", "commit": "661087b5b8f494a9e3ca42ec010d44c599aa26b5" },
   "gitsigns.nvim": { "branch": "main", "commit": "078041e9d060a386b0c9d3a8c7a7b019a35d3fb0" },
+  "harpoon": { "branch": "master", "commit": "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
   "indent-blankline.nvim": { "branch": "master", "commit": "3d08501caef2329aba5121b753e903904088f7e6" },
   "lazy.nvim": { "branch": "main", "commit": "83493db50a434a4c5c648faf41e2ead80f96e478" },
   "llm.nvim": { "branch": "main", "commit": "51b76dac9c33c0122adfe28daf52ceaa31c4aa02" },
@@ -33,6 +34,7 @@
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "221778e93bfaa58bce4be4e055ed2edecc26f799" },
   "term.nvim": { "branch": "main", "commit": "e4f5aaf3c0656445a1e7b5ff8f9de3a4712094dd" },
+  "todo-comments.nvim": { "branch": "main", "commit": "833d8dd8b07eeda37a09e99460f72a02616935cb" },
   "ui": { "branch": "v2.5", "commit": "9a98ddbed8db34b6a47e6806ac0a68803d693eaf" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
