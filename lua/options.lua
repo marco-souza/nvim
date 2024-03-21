@@ -1,4 +1,4 @@
-require "nvchad.options"
+require("nvchad.options")
 
 -- line numbers
 vim.opt.number = true
