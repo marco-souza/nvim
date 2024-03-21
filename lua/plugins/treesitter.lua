@@ -1,14 +1,8 @@
 local ensure_installed = {
   -- recommended
-  "vim",
-  "vimdoc",
   "query",
   "markdown",
   "markdown_inline",
-
-  -- defaults
-  "vim",
-  "lua",
 
   -- web dev
   "html",
@@ -57,7 +51,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
   init = function()
-    require("nvim-treesitter.configs").setup {
+    require("nvim-treesitter.configs").setup({
       textobjects = textobjects,
       ensure_installed = ensure_installed,
       auto_install = true,
@@ -72,7 +66,6 @@ return {
           node_decremental = "<leader>sd",
         },
       },
-    }
+    })
   end,
 }
-
