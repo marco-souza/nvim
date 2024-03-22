@@ -28,4 +28,7 @@ return {
   "stevearc/conform.nvim",
   event = "LspAttach",
   opts = options,
+  keys = {
+    { "gf", vim.lsp.buf.format, desc = "Format buffer" },
+  },
 }
