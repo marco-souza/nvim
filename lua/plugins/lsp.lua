@@ -76,7 +76,7 @@ local function setup_lsp_mappings()
       -- Buffer local mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
       local opts = { buffer = ev.buf }
-      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+      vim.keymap.set("n", "gD", vim.lsp.buf.references, opts)
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
       vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
       vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
@@ -156,15 +156,23 @@ end
 
 return {
   "neovim/nvim-lspconfig",
+  event = "VeryLazy",
   config = lspconfig_setup,
   dependencies = {
     {
       "williamboman/mason.nvim",
       config = true,
+    },
+    {
+      "williamboman/mason-lspconfig.nvim",
       opts = {
         automatic_installation = true,
         ensure_installed = ensure_installed,
       },
     },
+  },
+  keys = {
+    { "gD", vim.lsp.buf.references, desc = "Go to References" },
+    { "gr", vim.lsp.buf.rename, desc = "Rename symbol" },
   },
 }
