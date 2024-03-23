@@ -6,6 +6,7 @@ return {
   {
     "marco-souza/snake.nvim",
     cmd = "Snake",
-    -- dir = "~/workspace/marco-souza/snake.nvim/"
+    opts = {},
+    -- dir = "~/workspace/marco-souza/snake.nvim/",
   },
 }
