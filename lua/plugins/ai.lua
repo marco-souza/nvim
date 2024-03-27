@@ -1,14 +1,18 @@
 return {
-  {
-    "marco-souza/ollero.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "marco-souza/term.nvim",
-      "nvim-telescope/telescope-ui-select.nvim",
-    },
-    -- dir = "~/workspace/marco-souza/ollero.nvim/",
-    opts = {},
-  },
+  { "David-Kunz/gen.nvim", opts = { model = "gemma" } },
+  -- Minimal configuration
+
+  -- {
+  --   "marco-souza/ollero.nvim",
+  --   enable = false,
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "marco-souza/term.nvim",
+  --     "nvim-telescope/telescope-ui-select.nvim",
+  --   },
+  --   dir = "~/workspace/marco-souza/ollero.nvim/",
+  --   opts = {},
+  -- },
 
   -- {
   --   "huggingface/llm.nvim",
@@ -16,7 +20,7 @@ return {
   --   build = ":MasonInstall llm-ls", -- ensure llm-ls is installed
   --   version = "main",
   --   opts = {
-  --     model = "codellama",
+  --     model = "gemma:latest",
   --     backend = "ollama",
   --     url = "http://localhost:11434/api/generate",
   --     -- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
