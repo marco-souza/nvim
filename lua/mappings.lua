@@ -21,6 +21,16 @@ map("n", "<leader>x", ":x<CR>", opts)
 map("n", "<S-l>", ":bnext<CR>", opts)
 map("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Move text up and down
-map("n", "<A-j>", "<Esc>:m .+1<CR>==g", opts)
-map("n", "<A-k>", "<Esc>:m .-2<CR>==g", opts)
+-- Move text: https://vim.fandom.com/wiki/Moving_lines_up_or_down
+
+local sally_up = vim.tbl_deep_extend("force", { desc = "Move sally up" }, opts)
+local sally_down =
+  vim.tbl_deep_extend("force", { desc = "Move sally down" }, opts)
+
+map("n", "<A-j>", ":m .+1<CR>==", sally_up)
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", sally_up)
+map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", sally_up)
+
+map("n", "<A-k>", ":m .-2<CR>==", sally_down)
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", sally_down)
+map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", sally_down)
