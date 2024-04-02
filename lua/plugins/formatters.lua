@@ -24,11 +24,20 @@ local options = {
   },
 }
 
+local function format()
+  if vim.fn.exists(":IndentLinesToggle") > 0 then
+    vim.cmd("EslintFixAll")
+  end
+
+  -- fallback to vim.lsp.buf.format()
+  require("conform").format()
+end
+
 return {
   "stevearc/conform.nvim",
   event = "LspAttach",
   opts = options,
   keys = {
-    { "gf", vim.lsp.buf.format, desc = "Format buffer" },
+    { "gf", format, desc = "Format buffer" },
   },
 }
