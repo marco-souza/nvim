@@ -1,6 +1,9 @@
 return {
-  { "David-Kunz/gen.nvim", opts = { model = "gemma" } },
-  -- Minimal configuration
+  {
+    "David-Kunz/gen.nvim",
+    cmd = "Gen",
+    opts = { model = "gemma" },
+  },
 
   -- {
   --   "marco-souza/ollero.nvim",
