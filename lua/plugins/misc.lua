@@ -55,6 +55,20 @@ return {
 
       lspconfig.emmet_ls.setup({
         capabilities = capabilities,
+        filetypes = {
+          "css",
+          "eruby",
+          "html",
+          "javascript",
+          "javascriptreact",
+          "less",
+          "sass",
+          "scss",
+          "svelte",
+          "pug",
+          "typescriptreact",
+          "hbs",
+        },
         init_options = {
           html = {
             options = {

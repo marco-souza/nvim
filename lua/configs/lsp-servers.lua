@@ -8,6 +8,7 @@ M.servers = {
   "eslint",
   "clangd",
   "rust_analyzer",
+  "tailwindcss",
   "emmet_ls",
   "gopls",
   "lua_ls",
@@ -44,6 +45,26 @@ M.configs = {
     settings = {
       packageManager = "yarn",
     },
+  },
+  emmet_ls = {
+    filetypes = {
+      "css",
+      "eruby",
+      "html",
+      "javascript",
+      "javascriptreact",
+      "less",
+      "sass",
+      "scss",
+      "svelte",
+      "pug",
+      "typescriptreact",
+      "hbs",
+      "handlebars",
+    },
+  },
+  html = {
+    filetypes = { "html", "hbs", "handlebars" },
   },
   htmx = {
     filetypes = { "html", "tsx", "gotmpl" },
