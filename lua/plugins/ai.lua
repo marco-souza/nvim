@@ -1,21 +1,19 @@
 return {
-  {
-    "David-Kunz/gen.nvim",
-    cmd = "Gen",
-    opts = { model = "gemma" },
-  },
+  { "github/copilot.vim", cmd = "Copilot" },
 
-  -- {
-  --   "marco-souza/ollero.nvim",
-  --   enable = false,
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     "marco-souza/term.nvim",
-  --     "nvim-telescope/telescope-ui-select.nvim",
-  --   },
-  --   dir = "~/workspace/marco-souza/ollero.nvim/",
-  --   opts = {},
-  -- },
+  { "David-Kunz/gen.nvim", cmd = "Gen", opts = { model = "llama3" } },
+
+  -- setup ollero
+  {
+    "marco-souza/ollero.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "marco-souza/term.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
+    },
+    dir = "~/workspace/marco-souza/ollero.nvim/",
+    opts = {},
+  },
 
   -- {
   --   "huggingface/llm.nvim",
