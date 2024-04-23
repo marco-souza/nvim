@@ -22,9 +22,9 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       load = {
-        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.defaults"] = {},  -- Loads default behaviour
         ["core.concealer"] = {}, -- Adds pretty icons to your documents
-        ["core.dirman"] = { -- Manages Neorg workspaces
+        ["core.dirman"] = {      -- Manages Neorg workspaces
           config = {
             workspaces = {
               notes = "~/workspace/marco-souza/notes",
@@ -33,5 +33,25 @@ return {
         },
       },
     },
+  },
+
+  {
+    'nvim-orgmode/orgmode',
+    event = 'VeryLazy',
+    ft = { 'org' },
+    config = function()
+      -- Setup orgmode
+      require('orgmode').setup({
+        org_agenda_files       = '~/workspace/marco-souza/notes/agenda/**/*',
+        org_default_notes_file = '~/workspace/marco-souza/notes/refile.org',
+      })
+
+      -- NOTE: If you are using nvim-treesitter with `ensure_installed = "all"` option
+      -- add `org` to ignore_install
+      -- require('nvim-treesitter.configs').setup({
+      --   ensure_installed = 'all',
+      --   ignore_install = { 'org' },
+      -- })
+    end,
   },
 }
