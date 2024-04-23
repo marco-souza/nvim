@@ -40,10 +40,18 @@ return {
     event = "VeryLazy",
     ft = { "org" },
     config = function()
+      local notes_directory = "~/workspace/marco-souza/notes"
       -- Setup orgmode
       require("orgmode").setup({
-        org_agenda_files = "~/workspace/marco-souza/notes/agenda/**/*",
-        org_default_notes_file = "~/workspace/marco-souza/notes/refile.org",
+        org_hide_leading_stars = true,
+        org_agenda_files = notes_directory .. "/**/*",
+        org_default_notes_file = notes_directory .. "/notes.org",
+        org_todo_keywords = { "TODO", "WIP", "|", "DONE", "CANCELED" },
+        org_todo_keyword_faces = {
+          WIP = ":foreground yellow :weight bold",
+          CANCELED = ":foreground red :weight bold :underline on",
+          -- TODO = ":background #000000 :foreground red", -- overrides builtin color for `TODO` keyword
+        },
       })
 
       -- NOTE: If you are using nvim-treesitter with `ensure_installed = "all"` option
