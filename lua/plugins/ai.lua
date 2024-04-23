@@ -1,12 +1,13 @@
 return {
-  { "github/copilot.vim", cmd = "Copilot" },
+  { "github/copilot.vim", event = "VeryLazy" },
 
   { "David-Kunz/gen.nvim", cmd = "Gen", opts = { model = "llama3" } },
 
   -- setup ollero
   {
     "marco-souza/ollero.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    enable = false, -- this is not working yet :(
     dependencies = {
       "marco-souza/term.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
