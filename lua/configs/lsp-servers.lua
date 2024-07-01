@@ -13,6 +13,7 @@ M.servers = {
   "gopls",
   "lua_ls",
   "htmx",
+  "biome",
 }
 
 -- setup js server
