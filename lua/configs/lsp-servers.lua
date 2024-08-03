@@ -14,6 +14,7 @@ M.servers = {
   "lua_ls",
   "htmx",
   "biome",
+  "gleam",
 }
 
 -- setup js server
