@@ -1,5 +1,6 @@
 local options = {
   formatters_by_ft = {
+    zig = { "zigfmt" },
     lua = { "stylua", "luacheck" },
     css = { "prettier" },
     html = { "prettier" },
