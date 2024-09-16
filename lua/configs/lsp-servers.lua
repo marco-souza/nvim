@@ -14,7 +14,7 @@ M.servers = {
   "lua_ls",
   "htmx",
   "biome",
-  "gleam",
+  "zls",
 }
 
 -- setup js server
@@ -93,6 +93,12 @@ M.configs = {
       },
     },
   },
+  zls = {
+    cmd = { "zls" },
+    filetypes = { "zig", "zir" },
+    root_dir = util.root_pattern("zls.json", "build.zig", ".git"),
+    single_file_support = true,
+  }
 }
 
 return M
