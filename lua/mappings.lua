@@ -14,8 +14,9 @@ map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
--- Close window
-map("n", "<leader>x", ":x<CR>", opts)
+
+-- Close buffer
+map("n", "<leader>x", ":bd<CR>", opts)
 
 -- Naviagate buffers
 map("n", "<S-l>", ":bnext<CR>", opts)
