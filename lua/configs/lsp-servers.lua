@@ -22,7 +22,7 @@ local ts_lsp = "denols"
 local files = vim.fs.find({ "deno.json", "deno.jsonc" }, { upward = true })
 
 if #files == 0 then
-  ts_lsp = "tsserver"
+  ts_lsp = "ts_ls"
 end
 
 table.insert(M.servers, ts_lsp)
