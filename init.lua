@@ -36,5 +36,10 @@ require "nvchad.autocmds"
 
 vim.schedule(function()
   require "mappings"
-  vim.cmd("Nvdash")
+
+  -- if buffer is empty, show dashboard
+  local bufferFile = vim.api.nvim_buf_get_name(0)
+  if bufferFile == "" then
+    vim.cmd("Nvdash")
+  end
 end)
