@@ -1,8 +1,16 @@
+-- reference https://github.com/NvChad/ui?tab=readme-ov-file#install
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
+M.base46 = {
   theme = "kanagawa",
+  theme_toggle = { "kanagawa", "one_light" },
+}
+
+M.ui = {
+  statusline = {
+    theme = "vscode_colored",
+  },
 
   -- hl_override = {
   -- 	Comment = { italic = true },
