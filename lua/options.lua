@@ -44,3 +44,6 @@ vim.opt.undofile = true
 
 -- leader
 vim.g.mapleader = " "
+
+-- obsidian
+vim.opt_local.conceallevel = 2
