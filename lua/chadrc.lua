@@ -3,7 +3,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "one_light",
+  theme = "kanagawa",
   theme_toggle = { "kanagawa", "one_light" },
 }
 
