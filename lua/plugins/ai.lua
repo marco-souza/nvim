@@ -5,7 +5,7 @@ return {
   {
     "marco-souza/ollero.nvim",
     event = "VeryLazy",
-    opts = { model = "llama3.1" },
+    opts = { model = "deepseek-r1:8b" },
     -- dir = "~/w/marco-souza/ollero.nvim/",
     dependencies = {
       "marco-souza/term.nvim",
