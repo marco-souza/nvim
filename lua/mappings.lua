@@ -78,3 +78,6 @@ end
 local theme_opts = vim.tbl_deep_extend("force", { desc = "Toggle Theme" }, opts)
 
 map("n", "<leader>tt", toggle_theme, theme_opts)
+
+-- Oil.nvim
+map("n", "<leader>o", ":Oil<CR>", { desc = "Open Oil" })
