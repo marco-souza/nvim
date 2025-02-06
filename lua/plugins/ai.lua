@@ -3,10 +3,9 @@ return {
 
   {
     "supermaven-inc/supermaven-nvim",
-    opts = {},
-    -- config = function()
-    --   require("supermaven-nvim").setup({})
-    -- end,
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
   },
 
   -- setup ollero
@@ -21,37 +20,49 @@ return {
     },
   },
 
-  -- {
-  --   "David-Kunz/gen.nvim",
-  --   cmd = "Gen",
-  --   opts = { model = "llama3.1" },
-  -- },
-
-  -- {
-  --   "huggingface/llm.nvim",
-  --   enable = false,                 -- this is not working yet :(
-  --   build = ":MasonInstall llm-ls", -- ensure llm-ls is installed
-  --   version = "main",
-  --   opts = {
-  --     model = "llama3.1:latest",
-  --     backend = "ollama",
-  --     url = "http://localhost:11434/api/generate",
-  --     -- cf https://github.com/ollama/ollama/blob/main/docs/api.md#parameters
-  --     request_body = {
-  --       model = "llama3.1",
-  --       -- Modelfile options for the model you use
-  --       options = {
-  --         temperature = 0.2,
-  --         top_p = 0.95,
-  --       },
-  --     },
-  --     tokens_to_clear = { "<EOT>" },
-  --     fim = {
-  --       enabled = true,
-  --       prefix = "<PRE> ",
-  --       middle = " <MID>",
-  --       suffix = " <SUF>",
-  --     },
-  --   },
-  -- },
+  -- avante.nvim (nvim cursor-like)
+  {
+    {
+      "yetone/avante.nvim",
+      event = "VeryLazy",
+      lazy = false,
+      version = false, -- set this if you want to always pull the latest change
+      opts = { provider = "copilot" },
+      build = "make",
+      dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+        "stevearc/dressing.nvim",
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        --- The below dependencies are optional,
+        "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+        "zbirenbaum/copilot.lua", -- for providers='copilot'
+        {
+          -- support for image pasting
+          "HakonHarnes/img-clip.nvim",
+          event = "VeryLazy",
+          opts = {
+            -- recommended settings
+            default = {
+              embed_image_as_base64 = false,
+              prompt_for_file_name = false,
+              drag_and_drop = {
+                insert_mode = true,
+              },
+              -- required for Windows users
+              use_absolute_path = true,
+            },
+          },
+        },
+        {
+          -- Make sure to set this up properly if you have lazy=true
+          "MeanderingProgrammer/render-markdown.nvim",
+          opts = {
+            file_types = { "markdown", "Avante" },
+          },
+          ft = { "markdown", "Avante" },
+        },
+      },
+    },
+  },
 }
