@@ -1,12 +1,20 @@
 return {
   { "github/copilot.vim", event = "VeryLazy" },
 
+  {
+    "supermaven-inc/supermaven-nvim",
+    opts = {},
+    -- config = function()
+    --   require("supermaven-nvim").setup({})
+    -- end,
+  },
+
   -- setup ollero
   {
     "marco-souza/ollero.nvim",
     event = "VeryLazy",
     opts = { model = "deepseek-r1:8b" },
-    -- dir = "~/w/marco-souza/ollero.nvim/",
+    dir = "~/w/marco-souza/ollero.nvim/",
     dependencies = {
       "marco-souza/term.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
