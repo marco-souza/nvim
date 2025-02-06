@@ -1,13 +1,6 @@
 return {
   { "github/copilot.vim", event = "VeryLazy" },
 
-  {
-    "supermaven-inc/supermaven-nvim",
-    config = function()
-      require("supermaven-nvim").setup({})
-    end,
-  },
-
   -- setup ollero
   {
     "marco-souza/ollero.nvim",
