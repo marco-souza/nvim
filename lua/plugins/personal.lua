@@ -1,15 +1,25 @@
 return {
   {
     "marco-souza/term.nvim",
-    dir = "~/w/marco-souza/term.nvim/",
+    -- dir = "~/w/marco-souza/term.nvim/",
     dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
     cmd = "Term",
     config = true,
     keys = {
       {
-        "<leader>t",
+        "<leader>tt",
         ":Term open<CR>",
-        desc = "Toggle Term dashboard",
+        desc = "Open last session 📝",
+      },
+      {
+        "<leader>tk",
+        ":Term k9s<CR>",
+        desc = "Open k9s ⚓️",
+      },
+      {
+        "<leader>th",
+        ":Term htop<CR>",
+        desc = "Open htop 📊",
       },
     },
   },
