@@ -8,7 +8,7 @@ return {
     keys = {
       {
         "<leader>tt",
-        ":Term open<CR>",
+        ":Term<CR>",
         desc = "Open last session 📝",
       },
       {
