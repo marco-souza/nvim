@@ -37,8 +37,8 @@ return {
     keys = {
       {
         "<leader>r",
-        ":Rest open<CR>",
-        desc = "Open Rest Client",
+        ":Rest<CR>",
+        desc = "Open Rest client 🚀",
       },
     },
   },

@@ -4,7 +4,7 @@ return {
     "rose-pine/neovim",
     init = function()
       --- run colorschema command
-      vim.cmd.colorscheme("rose-pine")
+      vim.cmd.colorscheme("rose-pine-moon")
     end,
   },
   {

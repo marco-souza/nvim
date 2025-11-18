@@ -36,9 +36,10 @@
   "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" },
   "present.nvim": { "branch": "main", "commit": "547b9850505fa8f706ae02ddeebd6e78cf4d6a70" },
   "render-markdown.nvim": { "branch": "main", "commit": "e6a5cf4edb228ebdab835252f1de19381ed41aa6" },
-  "rest.nvim": { "branch": "main", "commit": "e7aa663cc2a3b07bb203da97a95b13fb7b478d1c" },
+  "rest.nvim": { "branch": "main", "commit": "fa948910412f603bd411de2e297dc4d627bb839e" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
-  "telescope.nvim": { "branch": "master", "commit": "3a12a853ebf21ec1cce9a92290e3013f8ae75f02" },
+  "telescope.nvim": { "branch": "master", "commit": "83a3a713d6b2d2a408491a1b959e55a7fa8678e8" },
+  "term.nvim": { "branch": "main", "commit": "5674e56243073cb7c471ae5aa8f8a41f3a1b5f6d" },
   "todo-comments.nvim": { "branch": "main", "commit": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668" },
   "vim-wakatime": { "branch": "master", "commit": "d7973b157a632d1edeff01818f18d67e584eeaff" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
