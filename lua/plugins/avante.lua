@@ -13,11 +13,11 @@ return {
         enable_cursor_planning_mode = true, -- enable cursor planning mode!
       },
 
-      -- providers = {
-      --   copilot = {
-      --     model = "gemini-2.5-pro",
-      --   },
-      -- },
+      providers = {
+        copilot = {
+          model = "gemini-3-pro-preview",
+        },
+      },
 
       rules = {
         project_dir = ".avante/rules", -- relative to project root, can also be an absolute path

@@ -1,7 +1,5 @@
 {
-  "nativeMCPServers": [
-
-  ],
+  "nativeMCPServers": [],
   "mcpServers": {
     "weather": {
       "args": [
@@ -27,9 +25,9 @@
       ],
       "command": "npx"
     },
-    "docker-mcp": {
-      "command": "docker",
-      "args": ["run", "--rm", "example-mcp-server"]
+    "docker": {
+      "args": ["mcp", "gateway", "run"],
+      "command": "docker"
     }
   }
 }
