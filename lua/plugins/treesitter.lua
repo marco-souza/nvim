@@ -56,7 +56,7 @@ local textobjects = {
 return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-  init = function()
+  config = function()
     require("nvim-treesitter.configs").setup({
       textobjects = textobjects,
       ensure_installed = ensure_installed,
