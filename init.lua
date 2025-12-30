@@ -1,17 +1,12 @@
----@alias NeovimDistro "mini" | "main"
+---@alias NeovimDistro "mini" | "main" | "lazy"
 
 ---@type NeovimDistro
-local version = os.getenv("DISTRO") or "main"
+local version = os.getenv("DISTRO") or "lazy"
 
 if version == "mini" then
   return require("distros.mini")
 end
 
--- nvim startup
-require("options")
-require("mappings")
-
--- install lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -26,12 +21,25 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
--- startup lazy
-require("lazy").setup({
+local spec = {
+  { import = "plugins" },
+}
+
+if version == "lazy" then
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- add user plugins
     { import = "lazy_plugins" },
-  },
+  }
+end
+
+-- nvim startup
+require("options")
+require("mappings")
+
+-- startup scratch
+require("lazy").setup({
+  spec = spec,
   defaults = { lazy = true },
 })
