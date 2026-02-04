@@ -49,33 +49,47 @@ map("i", "<A-k>", "<Esc>:m .-2<CR>==gi", sally_down)
 local toggle_checkbox_opts =
   vim.tbl_deep_extend("force", { desc = "Toggle checkbox" }, opts)
 
-local function toggle_checkbox()
-  local line = vim.api.nvim_get_current_line()
-  local unchecked = "%[ %]"
-  local checked = "%[x%]"
-  local output = line
+local function toggle_checkbox(separator)
+  separator = separator or "x"
 
-  if string.match(line, unchecked) then
-    output = string.gsub(line, unchecked, "[x]")
-  elseif string.match(line, checked) then
-    output = string.gsub(line, checked, "[ ]")
-  end
+  return function()
+    local line = vim.api.nvim_get_current_line()
+    local unchecked = "%[.%]"
+    local output = string.gsub(line, unchecked, "[" .. separator .. "]")
 
-  vim.api.nvim_set_current_line(output)
-end
-
-local function v_toggle_checkbox()
-  local start_line = vim.fn.getpos("'<")[2]
-  local end_line = vim.fn.getpos("'>")[2]
-
-  for i = start_line, end_line, 1 do
-    vim.api.nvim_win_set_cursor(0, { i, 0 })
-    toggle_checkbox()
+    vim.api.nvim_set_current_line(output)
   end
 end
 
-map("n", "<C-c><C-c>", toggle_checkbox, toggle_checkbox_opts)
-map("v", "<C-c><C-c>", v_toggle_checkbox, toggle_checkbox_opts)
+local function v_toggle_checkbox(separator)
+  separator = separator or "x"
+
+  return function()
+    local start_line = vim.fn.getpos("'<")[2]
+    local end_line = vim.fn.getpos("'>")[2]
+
+    for i = start_line, end_line, 1 do
+      vim.api.nvim_win_set_cursor(0, { i, 0 })
+      toggle_checkbox(separator)()
+    end
+  end
+end
+
+-- checked
+map("n", "<C-c><C-c>", toggle_checkbox(), toggle_checkbox_opts)
+map("v", "<C-c><C-c>", v_toggle_checkbox(), toggle_checkbox_opts)
+
+-- unchecked
+map("n", "<C-c><leader>", toggle_checkbox(" "), toggle_checkbox_opts)
+map("v", "<C-c><leader>", v_toggle_checkbox(" "), toggle_checkbox_opts)
+
+-- in progress
+map("n", "<C-c><C-v>", toggle_checkbox("~"), toggle_checkbox_opts)
+map("v", "<C-c><C-v>", v_toggle_checkbox("~"), toggle_checkbox_opts)
+
+-- canceled
+map("n", "<C-c><C-x>", toggle_checkbox("-"), toggle_checkbox_opts)
+map("v", "<C-c><C-x>", v_toggle_checkbox("-"), toggle_checkbox_opts)
 
 -- Oil.nvim
 map("n", "<leader>o", ":Oil<CR>", { desc = "Open Oil" })
